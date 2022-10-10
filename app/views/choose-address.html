@@ -7,6 +7,12 @@ Space travel service - What is your hame address?
 {% endblock %}
 
 {% block content %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
 <form class="form" method="post" action="destination">
 
   <div class="govuk-grid-row">
@@ -15,6 +21,10 @@ Space travel service - What is your hame address?
       <h1 class="govuk-heading-l">
         What is your home address?
       </h1>
+
+      <h2 class="govuk-heading-m">
+        Postcode <br>{{ data['post-code']}} <a href="#" class="govuk-link govuk-!-font-weight-regular govuk-!-font-size-19">Change</a>
+      </h2>
 
       {{ govukSelect({
         id: "choose-address",
