@@ -1,0 +1,38 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post" action="choose-address">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+      <h1 class="govuk-heading-l">
+        What is your home address?
+      </h1>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Post code"
+  },
+  id: "post-code",
+  name: "post-code",
+  classes: "govuk-input--width-10"
+}) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+     
+      </ul>
+    </div>
+  </div>
+</form>
+{% endblock %}

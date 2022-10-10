@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+<form class="form" method="post" action="check-answers">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -16,37 +17,30 @@
         name: "where-do-you-want-to-go",
         fieldset: {
           legend: {
-            text: "Legend text",
+            text: "Which is your preferred destniation?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--l"
           }
-        },
-        hint: {
-          text: "Hint text"
         },
         items: [
           {
             value: "Moon",
-            text: "Moon"
-            
+            text: "The Moon"
           },
           {
             value: "Mars",
             text: "Mars"
-            
           }
         ]
       }) }}
 
       {{ govukButton({
-        text: "Start now",
-  href: "#",
-  isStartButton: true
+        text: "Continue"
       }) }}
 
      
       </ul>
     </div>
   </div>
-
+</form>
 {% endblock %}
