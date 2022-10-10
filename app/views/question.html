@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-want-to-go",
+        name: "where-do-you-want-to-go",
+        fieldset: {
+          legend: {
+            text: "Legend text",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Hint text"
+        },
+        items: [
+          {
+            value: "Moon",
+            text: "Moon"
+            
+          },
+          {
+            value: "Mars",
+            text: "Mars"
+            
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Start now",
+  href: "#",
+  isStartButton: true
+      }) }}
+
+     
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
